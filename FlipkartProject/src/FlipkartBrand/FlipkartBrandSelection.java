@@ -43,7 +43,7 @@ public class FlipkartBrandSelection {
 		act.moveToElement(mainmenu).build().perform();//taking mouse
 		WebElement mobiles = driver.findElement(By.xpath("//a[contains(text(),'Mobiles')]"));
 		mobiles.click();//clicking on Mobiles
-		
+		driver.close();
 		//ScrollUp and checking functionality for getting 4 GB selected Checkbox
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,450)");
