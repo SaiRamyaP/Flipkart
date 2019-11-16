@@ -26,8 +26,8 @@ public class FlipkartBrandSelection {
 		driver.manage().window().maximize();
 		
 		//SignIn
-		driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div/div[2]/div/form/div[1]/input")).sendKeys("delightfulramya2@gmail.com");
-		driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div/div[2]/div/form/div[2]/input")).sendKeys("Ramya7714");
+		driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div/div[2]/div/form/div[1]/input")).sendKeys("flipkart@gmail.com");
+		driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div/div[2]/div/form/div[2]/input")).sendKeys("Test@123");
 		driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div/div[2]/div/form/div[3]/button")).click();
 		
 		//MouseMove functionality to particular element
@@ -77,6 +77,12 @@ public class FlipkartBrandSelection {
 		
 		//Place Order
 		driver.findElement(By.xpath("//*[@id=\"container\"]/div/div[2]/div[2]/div/div[1]/div/div[3]/div/form/button/span")).click();
+		
+		//Logout
+		Actions s = new Actions(driver);
+		WebElement user = driver.findElement(By.className("_2aUbKa"));
+		s.moveToElement(user).build().perform();
+		driver.findElement(By.linkText("Logout")).click();
 		Thread.sleep(1000);
 		driver.close();//Close the browser automatically
 	}

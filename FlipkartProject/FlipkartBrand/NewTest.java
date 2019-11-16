@@ -21,6 +21,9 @@ import org.testng.annotations.AfterSuite;
 
 public class NewTest {
 	WebDriver driver = new ChromeDriver();
+	
+	String username = "flipkart@gmail.com"; 
+	String password = "Test@123";
 		// This method is to navigate flipkart URL
 	@BeforeClass
 	public void init() {
@@ -96,6 +99,14 @@ public class NewTest {
 				.click();
 		Alert a = driver.switchTo().alert();
 		a.accept();
+	}
+	
+	@Test
+	public void logout() {
+		Actions s = new Actions(driver);
+		WebElement user = driver.findElement(By.className("_2aUbKa"));
+		s.moveToElement(user).build().perform();
+		driver.findElement(By.linkText("Logout")).click();
 	}
 	
 	@AfterClass
